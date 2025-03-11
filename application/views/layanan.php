@@ -88,7 +88,7 @@
     </style>
 </head>
 <body>
-    <h2 class="text-center text-secondary col-md-4">Layanan Kami</h2>
+    <h2 class="text-center text-secondary mt-5 col-md-4">Layanan Kami</h2>
     <div class="container py-5">
         <div class="row justify-content-center">
             <!-- Service Card 1: Skrining & Check Up -->
