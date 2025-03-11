@@ -88,7 +88,7 @@
             <p class="menu-border">Pelayanan</p>
             <p class="menu-border">Dokter</p>
             <p class="menu-border">Jadwal Dokter</p>
-            <p class="menu-border">Berita</p>
+            <p class="menu-border">Berita Terbaru</p>
         </div>
     </div>
     
