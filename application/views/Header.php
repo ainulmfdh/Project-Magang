@@ -87,7 +87,7 @@
             <p class="menu-border">Beranda</p>
             <p class="menu-border">Pelayanan</p>
             <p class="menu-border">Dokter</p>
-            <p class="menu-border">Jadwal</p>
+            <p class="menu-border">Jadwal Dokter</p>
             <p class="menu-border">Berita</p>
         </div>
     </div>
