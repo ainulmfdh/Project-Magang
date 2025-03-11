@@ -51,7 +51,7 @@
         <!-- Clinic Logo and Description (Left-aligned) -->
         <div class="mb-4">
             <div class="d-flex align-items-center">
-                <img src="<?= base_url('/assets/image3.png'); ?>" alt="Klinik Mata dr. Sjamsu" style="height: 30px;">
+                <img src="<?= base_url('/asset/image3.png'); ?>" alt="Klinik Mata dr. Sjamsu" style="height: 30px;">
             </div>
             <p class="mt-4">
                 Kami adalah tim dokter mata yang professional dan berkompetensi tinggi. Kami peduli atas kesehatan mata Anda.
