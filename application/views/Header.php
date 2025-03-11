@@ -71,11 +71,11 @@
 <body>
     <div class="w-100 bg-white position-relative" style="height: 80px; z-index: 30;">
         <div class="d-flex align-items-center h-100">
-            <img class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="assets/image_2.png">
-            <img style="margin-left: 85px;" src="../../asset/image_4.png">
+            <img class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('asset/image_2.png');?>">
+            <img style="margin-left: 85px;" src="<?= base_url('asset/image_4.png');?>">
         </div>
         <div id="hamburger-menu-toggle" class="position-fixed" style="top: 28px; right: 20px; padding-right: 20px;">
-            <img src="../../asset/material-symbols_menu.png">   
+            <img src="<?= base_url('asset/material-symbols_menu.png');?>">   
         </div>
     </div>
     
@@ -93,7 +93,7 @@
     </div>
     
     <div class="min-vh-100 position-relative" style="z-index: 10;">
-        <img id="img-slider" class="h-100 w-100" src="assets/bg-slider.png">
+        <img id="img-slider" class="h-100 w-100" src="<?= base_url('asset/image_4.png');?>">
         <div class="slider-overlay d-flex flex-column align-items-center">
             <div class="d-flex flex-column">
                 <h1 class="slider-heading">FOKUS UTAMA UNTUK KESEHATAN MATA ANDA</h1>
@@ -114,7 +114,7 @@
         const hamburgerMenu = document.getElementById('hamburger-menu');
         const closeHamburgerMenu = document.getElementById('close-hamburger-menu');
         let hamburgerMenuIsOpen = false;
-        const sliderImages = ["../../asset/bg-slider.png", "../../asset/bg2.png"];
+        const sliderImages = ["<?= base_url('asset/bg-slider.png');?>", "<?= base_url('asset/bg2.png');?>"];
         const imageSlider = document.getElementById("img-slider");
         let imageSliderActive = 0;
 
