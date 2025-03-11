@@ -72,10 +72,10 @@
     <div class="w-100 bg-white position-relative" style="height: 80px; z-index: 30;">
         <div class="d-flex align-items-center h-100">
             <img class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="assets/image_2.png">
-            <img style="margin-left: 85px;" src="assets/image_4.png">
+            <img style="margin-left: 85px;" src="../../asset/image_4.png">
         </div>
         <div id="hamburger-menu-toggle" class="position-fixed" style="top: 28px; right: 20px; padding-right: 20px;">
-            <img src="assets/material-symbols_menu.png">   
+            <img src="../../asset/material-symbols_menu.png">   
         </div>
     </div>
     
@@ -114,7 +114,7 @@
         const hamburgerMenu = document.getElementById('hamburger-menu');
         const closeHamburgerMenu = document.getElementById('close-hamburger-menu');
         let hamburgerMenuIsOpen = false;
-        const sliderImages = ["assets/bg-slider.png", "assets/bg2.png"];
+        const sliderImages = ["../../asset/bg-slider.png", "../../asset/bg2.png"];
         const imageSlider = document.getElementById("img-slider");
         let imageSliderActive = 0;
 
