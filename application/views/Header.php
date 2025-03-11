@@ -92,9 +92,9 @@
         </div>
     </div>
     
-    <div class="min-vh-100 position-relative" style="z-index: 10;">
+    <div class="h-100 position-relative" style="z-index: 10;">
         <img id="img-slider" class="h-100 w-100" src="<?= base_url('asset/image_4.png');?>">
-        <div class="slider-overlay d-flex flex-column align-items-center">
+        <div class="slider-overlay h-100 d-flex flex-column align-items-center">
             <div class="d-flex flex-column">
                 <h1 class="slider-heading">FOKUS UTAMA UNTUK KESEHATAN MATA ANDA</h1>
                 <p class="slider-text">Jadwalkan waktu anda untuk periksa maupun konsultasi pada klinik kami, dengan klik booking dibawah ini</p>
