@@ -23,7 +23,7 @@
 }
     </script>
 </head>
-<body id="form">
+<body>
     <div class="container mt-4">
         <ul class="nav nav-tabs">
             <li class="nav-item">
