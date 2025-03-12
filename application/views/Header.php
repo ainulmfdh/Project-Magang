@@ -68,10 +68,10 @@
         }
     </style>
 </head>
-<body>
+<body id="header">
     <div class="w-100 bg-white position-relative" style="height: 80px; z-index: 30;">
         <div class="d-flex align-items-center h-100">
-            <img class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('asset/image_2.png');?>">
+            <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('asset/image_2.png');?>">
             <img style="margin-left: 85px;" src="<?= base_url('asset/image_4.png');?>">
         </div>
         <div id="hamburger-menu-toggle" class="position-fixed" style="top: 28px; right: 20px; padding-right: 20px;">
@@ -115,8 +115,12 @@
             event.preventDefault(); // Mencegah perilaku default (jika tombol dalam form)
             document.getElementById('bpjs').scrollIntoView({ behavior: 'smooth' });
         });
+        document.getElementById('logomata').addEventListener('click', function (event) {
+            event.preventDefault(); // Mencegah perilaku default (jika tombol dalam form)
+            document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
-    
+
     <script>
         const hamburgerMenuToggle = document.getElementById('hamburger-menu-toggle');
         const hamburgerMenu = document.getElementById('hamburger-menu');
