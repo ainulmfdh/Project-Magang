@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dokter & Berita</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
             background-image: url('asset/PORTOFOLIO.png');
@@ -14,146 +14,248 @@
             background-attachment: fixed;
             font-family: Arial, sans-serif;
         }
-		.carousel {
-            max-width: 350px; 
-            margin: auto;
+        .carousel-item img {
+            border-radius: 10px;
+            object-fit: cover;
         }
-		.carousel-item {
+        .carousel-inner {
+            text-align: center;
+        }
+        .btn-jadwal{
+            margin-top: 20px;
+            gap: 5px;
+            padding: 10px 15px;
+            font-weight: 500;
+            color: white;
+            background: rgba(0, 170, 181, 1);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
             display: flex;
-            justify-content: center;
-			display: none;
+            justify-content: flex-end;
         }
-		.carousel-item.active {
-    display: block;
-}
-        .card {
-            width: 20rem;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .card img {
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
-        .card-body {
-            text-align: left;
+        .btn-jadwal i{
+            margin-right: 5px;
         }
         .btn-custom {
             background-color: #17a2b8;
             color: white;
-            border-radius: 30px;
+            border-radius: 20px;
             padding: 10px 20px;
         }
         .btn-custom:hover {
             background-color: #138496;
-            color: white;
         }
-        .carousel-control-prev, .carousel-control-next {
-            width: 40px;
-            height: 40px;
-            background-color: #17a2b8;
-            border-radius: 50%;
+        .card-dokter{
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding: 20px 30px;
+            border-radius: 10px;
+        }
+        .card-dokter > .desc-dokter{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            text-align: left;
+        }
+        .card-dokter > button{
+            align-self: center;
+        }
+        .card-dokter > img {
+            border-radius: 20px;
+            height: 474px !important;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Custom carousel navigation styling */
+        .custom-carousel-nav {
+            position: absolute;
             top: 50%;
             transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 170, 181, 1);
+            border-radius: 50%;
+            border: none;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            width: 20px;
-            height: 20px;
+        
+        .custom-carousel-prev {
+            left: -10px;
         }
+        
+        .custom-carousel-next {
+            right: -10px;
+        }
+        
+        .custom-carousel-nav i {
+            font-size: 18px;
+        }
+        
+        /* Carousel indicators styling */
+        .carousel {
+            padding-bottom: 50px; /* Add space for indicators */
+            position: relative;
+        }
+        
+        .carousel-indicators {
+            position: absolute !important;
+            bottom: 0 !important;
+            margin-bottom: 0 !important;
+            z-index: 5;
+        }
+        
+        .carousel-indicators button {
+            width: 10px !important;
+            height: 10px !important;
+            border-radius: 50% !important;
+            background-color: #ccc !important;
+            margin: 0px 5px !important;
+        }
+        
+        .carousel-indicators .active {
+            background-color: rgba(0, 170, 181, 1) !important;
+        }
+		.card-berita{
+			backdrop-filter: blur(25px);
+            display: flex;
+            flex-direction: column;
+			gap: 20px;
+            align-items: start;
+            padding: 20px 30px;
+            border-radius: 10px;
+			text-align: left;
+		}
+		.card-berita > button{
+			background-color: white;
+			align-self: center;
+			border: 1px solid rgba(0, 170, 181, 1);
+			border-radius: 10px;
+			width: 300px;
+			padding: 15px 10px;
+			text-align: center;
+			color: rgba(0, 170, 181, 1);
+		}
+		.card-berita > img{
+			border-radius: 20px;
+            height: 333px !important;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+		}
     </style>
 </head>
 <body>
 <div class="container text-center mt-4">
     <h2 class="fw-bold">Tim Dokter Kami</h2>
-<div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <!-- Dokter 1 -->
             <div class="carousel-item active">
-                <div class="card">
-                    <img src="asset/dokter.png" class="card-img-top" alt="Dokter">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold text-primary">dr. Ria Sandy Deneska, Sp.M(K)</h5>
-                        <p class="card-text h-25">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                        <button class="btn btn-custom">
-                            <i class="fa-solid fa-book-open-reader"></i> Detail
-                        </button>
+                <div class="card-dokter">
+                    <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                    <div class="desc-dokter">
+                        <h5 class="mt-2 text-primary">dr. Ria Sandy Deneska, Sp.M(K)</h5>
+                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
                     </div>
+                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
                 </div>
             </div>
-		<div class="carousel-item">
-                <div class="card">
-                    <img src="asset/dokter.png" class="card-img-top" alt="Dokter 2">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold text-primary">dr. Budi Santoso, Sp.M(K)</h5>
-                        <p class="card-text h-25">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                        <button class="btn btn-custom">
-                            <i class="fa-solid fa-book-open-reader"></i> Detail
-                        </button>
+            <div class="carousel-item">
+                <div class="card-dokter">
+                    <img src="asset/dokter2.png" alt="Dokter 2">
+                    <div class="desc-dokter">
+                        <h5 class="mt-2 text-primary">dr. Budi Santoso, Sp.M(K)</h5>
+                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
                     </div>
+                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
                 </div>
             </div>
         </div>
-        <!-- Navigasi panah kiri & kanan -->
-		<button class="carousel-control-prev" type="button" data-bs-target="#doctorCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        
+        <!-- Custom carousel navigation arrows -->
+        <button class="custom-carousel-nav custom-carousel-prev" type="button" data-bs-target="#doctorCarousel" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#doctorCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <button class="custom-carousel-nav custom-carousel-next" type="button" data-bs-target="#doctorCarousel" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
         </button>
+        
+        <!-- Keep indicators inside carousel but position with CSS -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
     </div>
 </div>
+
 <div class="container text-center mt-4">
-    <h2 class="fw-bold">Berita terbaru</h2>
-<div id="beritaCarousel" class="carousel slide" data-bs-ride="carousel">
+    <h2 class="fw-bold">Berita Terbaru</h2>
+    <div id="beritaCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <!-- Dokter 1 -->
             <div class="carousel-item active">
-                <div class="card">
-                    <img src="asset/dokter.png" class="card-img-top" alt="Dokter">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold text-primary">BAKTI SOSIAL OPERASI KATARAK GRUP NUSANTARA & KLINIK MATA DR. SJAMSU</h5>
-                        <p class="card-text h-25">Dalam upaya meningkatkan kualitas hidup masyarakat, Grup Nusantara bekerja sama dengan Klinik Mata Dr. Sjamsu menggelar bakti sosial operasi katarak bagi masyarakat kurang mampu. </p>
-                        <button class="btn btn-custom">
-                            <i class="fa-solid fa-book-open-reader"></i> Detail
-                        </button>
-                    </div>
-                </div>
+               <div class="card-berita">
+				<img src="asset/berita.png" class="d-block w-100" alt="Berita 1">
+					<div class="tanggal-berita">
+						<i class="fa-regular fa-calendar"></i>
+						<span>12 Oktober 2021</span>
+					</div>
+					<h5 class="mt-2 text-primary">BAKTI SOSIAL OPERASI KATARAK</h5>
+					<p>Dalam upaya meningkatkan kualitas hidup masyarakat...</p>
+					<button class="btn btn-custom">
+						Baca Selengkapnya
+					</button>
+			   </div>
             </div>
-		<div class="carousel-item">
-                <div class="card">
-                    <img src="asset/dokter.png" class="card-img-top" alt="Dokter 2">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold text-primary">dr. Budi Santoso, Sp.M(K)</h5>
-                        <p class="card-text h-25">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                        <button class="btn btn-custom">
-                            <i class="fa-solid fa-book-open-reader"></i> Detail
-                        </button>
-                    </div>
-                </div>
+            <div class="carousel-item">
+                <div class="card-berita">
+					<img src="asset/berita.png" class="d-block w-100" alt="Berita 2">
+					<div class="tanggal-berita">
+						<i class="fa-regular fa-calendar"></i>
+						<span>12 Oktober 2021</span>
+					</div>
+					<h5 class="mt-2 text-primary">PELAYANAN KLINIK MATA</h5>
+					<p>Program layanan kesehatan mata kini lebih mudah...</p>
+					<button class="btn btn-custom">
+						Baca Selengkapnya
+					</button>
+				</div>
             </div>
         </div>
-        <!-- Navigasi panah kiri & kanan -->
-		<button class="carousel-control-prev" type="button" data-bs-target="#doctorCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        
+        <!-- Custom carousel navigation arrows -->
+        <button class="custom-carousel-nav custom-carousel-prev" type="button" data-bs-target="#beritaCarousel" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#doctorCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <button class="custom-carousel-nav custom-carousel-next" type="button" data-bs-target="#beritaCarousel" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
         </button>
+        
+        <!-- Keep indicators inside carousel but position with CSS -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#beritaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#beritaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Pastikan carousel berjalan otomatis
-    var myCarousel = document.querySelector('#doctorCarousel');
-    var carousel = new bootstrap.Carousel(myCarousel, {
-        interval: 2000, // Ganti slide setiap 2 detik
-        wrap: true
+    new bootstrap.Carousel(document.querySelector('#doctorCarousel'), {
+        interval: 3000, wrap: true
+    });
+    new bootstrap.Carousel(document.querySelector('#beritaCarousel'), {
+        interval: 4000, wrap: true
     });
 </script>
 </body>
