@@ -100,11 +100,14 @@
                 <p class="slider-text">Jadwalkan waktu anda untuk periksa maupun konsultasi pada klinik kami, dengan klik booking dibawah ini</p>
             </div>
             <button class="booking-btn">
-                <i class="fa-regular fa-calendar me-1"></i>
-                Booking
+                <a href="#form">
+                    <i class="fa-regular fa-calendar me-1"></i>
+                    Booking
+                </a>
             </button>
         </div>
     </div>
+    <?php include 'bpjs.php' ?>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
