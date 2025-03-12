@@ -65,32 +65,32 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(0, 0, 0, 0.1);
             display: flex;
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
-            gap: 10px;
-            padding-bottom: 10px;
             margin: auto;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .card img {
-            width: 110px; /* Lebar gambar */
-            height: 170px; /* Tinggi gambar */
+            width: 80px; 
+            height: 140px;
             object-fit: cover;
             border-radius: 10px;
         }
 
         .card-body {
-            flex: 1; /* Agar teks mengambil sisa ruang */
+            /* flex: 1;  */
         }
 
         .card-title {
             font-size: 20px;
-            font-weight: bold;
+            font-weight: semibold;
             margin-bottom: 20px;
         }
 
         .card-text {
-            font-size: 14px;
+            font-size: 13px;
             color: #555;
         }
 
@@ -104,10 +104,9 @@
             margin-right: 15px;
         }
         .btn-jadwal{
-            margin-top: 20px;
-            gap: 5px;
+            margin-top: 10px;
             padding: 10px 15px;
-            font-weight: 500;
+            font-weight: 400;
             color: white;
             background: rgba(0, 170, 181, 1);
             border: none;
@@ -136,16 +135,16 @@
     </div>
 </div>
 
-<div class="card">
+<div class="card d-flex flex-row mb-2">
     <img src="<?= base_url('asset/images/doctor.png') ?>" alt="Gambar">
     <div class="card-body">
         <h1 class="card-title">Jam Operasional</h1>
         <div class="jadwal">
-        <p class="card-text">Senin - Jumat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 12:00</p>
+        <p class="card-text">Senin - Jumat &nbsp;&nbsp; 09:00 - 12:00</p>
         <br>
-        <p class="card-text">Sabtu  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 12:00</p>
+        <p class="card-text">Sabtu  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 12:00</p>
         <br>
-        <p class="card-text">Minggu/Hari Libur &nbsp;&nbsp;&nbsp; 09:00 - 12:00</p>
+        <p class="card-text">Minggu/Hari Libur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tutup</p>
             <button class="btn-jadwal" ><i class="fa-regular fa-calendar"></i> Jadwal</i></button>
         </div>
         
