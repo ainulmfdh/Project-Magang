@@ -128,6 +128,7 @@
             display: flex;
             flex-direction: column;
 			gap: 20px;
+			margin: 20px;
             align-items: start;
             padding: 20px 30px;
             border-radius: 10px;
@@ -139,7 +140,6 @@
 			border: 1px solid rgba(0, 170, 181, 1);
 			border-radius: 10px;
 			width: 300px;
-			padding: 15px 10px;
 			text-align: center;
 			color: rgba(0, 170, 181, 1);
 		}
@@ -150,16 +150,22 @@
             object-fit: cover;
             display: block;
 		}
-		.container{
+		#dokter{
 			margin-top: 120px;
 		}
 		.container-berita{
 			margin-top: 80px;
 		}
+		#text-berita{
+			color: rgba(0, 170, 181, 1);
+		}
+		#text-dokter{
+			color: rgba(0, 170, 181, 1);
+		}
     </style>
 </head>
 <body>
-<div class="container text-center">
+<div id="dokter" class="container text-center">
     <h2 class="fw-bold">Tim Dokter Kami</h2>
     <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -167,7 +173,7 @@
                 <div class="card-dokter">
                     <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
                     <div class="desc-dokter">
-                        <h5 class="mt-2 text-info-emphasis">dr. Ria Sandy Deneska, Sp.M(K)</h5>
+                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
                     </div>
                     <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
@@ -177,7 +183,7 @@
                 <div class="card-dokter">
                     <img src="<?= base_url ('asset/dokter2.png');?>" alt="Dokter 2">
                     <div class="desc-dokter">
-                        <h5 class="mt-2 text-info-emphasis">dr. Budi Santoso, Sp.M(K)</h5>
+                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Budi Santoso, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
                     </div>
                     <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
@@ -212,7 +218,7 @@
 						<i class="fa-regular fa-calendar"></i>
 						<span>12 Oktober 2021</span>
 					</div>
-					<h5 class="mt-2 text-primary">BAKTI SOSIAL OPERASI KATARAK</h5>
+					<h5 id="text-berita" class="mt-2">BAKTI SOSIAL OPERASI KATARAK</h5>
 					<p>Dalam upaya meningkatkan kualitas hidup masyarakat...</p>
 					<button class="btn btn-custom">
 						Baca Selengkapnya
@@ -226,7 +232,7 @@
 						<i class="fa-regular fa-calendar"></i>
 						<span>12 Oktober 2021</span>
 					</div>
-					<h5 class="mt-2 text-primary">PELAYANAN KLINIK MATA</h5>
+					<h5 id="text-berita" class="mt-2">PELAYANAN KLINIK MATA</h5>
 					<p>Program layanan kesehatan mata kini lebih mudah...</p>
 					<button class="btn btn-custom">
 						Baca Selengkapnya
