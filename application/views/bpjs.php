@@ -47,10 +47,10 @@
 <div class="container mt-4">
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a id="privat" class="nav-link active text-white" href="#" onclick="showPrivatForm()">Privat</a>
+            <a id="privat" class="nav-link active text-white" onclick="showPrivatForm()">Privat</a>
         </li>
         <li class="nav-item">
-            <a id="bpjs" class="nav-link active text-white" href="#" onclick="showBPJSForm()">BPJS</a>
+            <a id="bpjs" class="nav-link active text-white" onclick="showBPJSForm()">BPJS</a>
         </li>
     </ul>
 </div>
