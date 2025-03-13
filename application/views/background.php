@@ -71,8 +71,6 @@
             object-fit: cover;
             display: block;
         }
-        
-        /* Custom carousel navigation styling */
         .custom-carousel-nav {
             position: absolute;
             top: 50%;
@@ -102,10 +100,8 @@
         .custom-carousel-nav i {
             font-size: 18px;
         }
-        
-        /* Carousel indicators styling */
         .carousel {
-            padding-bottom: 50px; /* Add space for indicators */
+            padding-bottom: 50px;
             position: relative;
         }
         
@@ -154,10 +150,16 @@
             object-fit: cover;
             display: block;
 		}
+		.container{
+			margin-top: 120px;
+		}
+		.container-berita{
+			margin-top: 80px;
+		}
     </style>
 </head>
 <body>
-<div class="container text-center mt-4">
+<div class="container text-center">
     <h2 class="fw-bold">Tim Dokter Kami</h2>
     <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -165,7 +167,7 @@
                 <div class="card-dokter">
                     <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
                     <div class="desc-dokter">
-                        <h5 class="mt-2 text-primary">dr. Ria Sandy Deneska, Sp.M(K)</h5>
+                        <h5 class="mt-2 text-info-emphasis">dr. Ria Sandy Deneska, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
                     </div>
                     <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
@@ -173,9 +175,9 @@
             </div>
             <div class="carousel-item">
                 <div class="card-dokter">
-                    <img src="asset/dokter2.png" alt="Dokter 2">
+                    <img src="<?= base_url ('asset/dokter2.png');?>" alt="Dokter 2">
                     <div class="desc-dokter">
-                        <h5 class="mt-2 text-primary">dr. Budi Santoso, Sp.M(K)</h5>
+                        <h5 class="mt-2 text-info-emphasis">dr. Budi Santoso, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
                     </div>
                     <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
@@ -199,7 +201,7 @@
     </div>
 </div>
 
-<div class="container text-center mt-4">
+<div class="container-berita text-center">
     <h2 class="fw-bold">Berita Terbaru</h2>
     <div id="beritaCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
