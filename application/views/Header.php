@@ -9,11 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
     <style>
-        body {
-            min-height: 100vh;
-            background-color: black;
-        }
-        
         #hamburger-menu {
             width: 70vw;
             height: 100vh;
@@ -32,6 +27,7 @@
             inset: 0;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 0 30px;
+            min-height: 100vh; /* Ensure minimum height */
         }
 
         .slider-heading {
@@ -66,10 +62,16 @@
             border-bottom: 1px solid white;
             padding-bottom: 20px;
         }
+
+        #img-slider {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover; /* Ensure the image covers the entire area */
+        }
     </style>
 </head>
 <body id="header">
-    <div class="w-100 bg-white position-relative" style="height: 80px; z-index: 30;">
+    <div class="w-100 bg-white position-fixed" style="height: 80px; z-index: 30;">
         <div class="d-flex align-items-center h-100">
             <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('asset/image_2.png');?>">
             <img style="margin-left: 85px;" src="<?= base_url('asset/image_4.png');?>">
@@ -92,8 +94,11 @@
         </div>
     </div>
     
-    <div class="h-100 position-relative" style="z-index: 10;">
-        <img id="img-slider" class="h-100 w-100" src="<?= base_url('asset/image_4.png');?>">
+    <!-- slider overlay -->
+    <div class="position-relative" style="z-index: 10;">
+        <div style="min-height: 100vh; width: 100%">
+            <img id="img-slider" src="<?= base_url('asset/image_4.png');?>">
+        </div>
         <div class="slider-overlay h-100 d-flex flex-column align-items-center">
             <div class="d-flex flex-column">
                 <h1 class="slider-heading">FOKUS UTAMA UNTUK KESEHATAN MATA ANDA</h1>
