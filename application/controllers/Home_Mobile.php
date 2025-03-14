@@ -9,6 +9,7 @@ class Home_Mobile extends CI_Controller {
 		$this->load->view('mobile/layanan');
 		$this->load->view('mobile/about');
 		$this->load->view('mobile/background');
+		$this->load->view('mobile/bd');
         $this->load->view('mobile/footer');
 	}
 }
