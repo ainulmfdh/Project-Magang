@@ -9,17 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Document</title>
     <style>
-        #hamburger-menu {
-            width: 70vw;
-            height: 100vh;
-            background-color: #00AAB5;
-            position: fixed;
-            top: 0;
-            right: -1000px;
-            padding-left: 40px;
-            color: white;
-            z-index: 40;
-            transition: all 0.3s linear;
+        #menu-navbar {
+            gap: 20px;
+            justify-content: end;
+            width: 100%;
+        }
+
+        #menu-navbar p {
+            margin: 0;
+            font-weight: 500;
         }
 
         .slider-overlay {
@@ -27,7 +25,7 @@
             inset: 0;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 0 30px;
-            min-height: 100vh; /* Ensure minimum height */
+            min-height: 100vh; 
         }
 
         .slider-heading {
@@ -58,34 +56,20 @@
             border: none;
         }
 
-        .menu-border {
-            border-bottom: 1px solid white;
-            padding-bottom: 20px;
-        }
-
         #img-slider {
             width: 100%;
             height: 100vh;
-            object-fit: cover; /* Ensure the image covers the entire area */
+            object-fit: cover; 
         }
     </style>
 </head>
 <body id="header">
-    <div class="w-100 bg-white position-fixed" style="height: 80px; z-index: 30;">
-        <div class="d-flex align-items-center h-100">
-            <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('asset/image_2.png');?>">
-            <img style="margin-left: 85px;" src="<?= base_url('asset/image_4.png');?>">
+    <div class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; padding-left: 50px; padding-right: 50px; z-index: 30;">
+        <div class="d-flex align-items-center">
+            <img id="logomata" src="<?= base_url('asset/image_2.png');?>">
+            <img src="<?= base_url('asset/image_4.png');?>">
         </div>
-        <div id="hamburger-menu-toggle" class="position-fixed" style="top: 28px; right: 20px; padding-right: 20px;">
-            <img src="<?= base_url('asset/material-symbols_menu.png');?>">   
-        </div>
-    </div>
-    
-    <div id="hamburger-menu">
-        <div class="d-flex justify-content-end align-items-center mt-4 pe-4">
-            <i id="close-hamburger-menu" class="fa-solid fa-x"></i>
-        </div>
-        <div class="d-flex flex-column gap-4 mt-5 px-2 pe-4">
+        <div id="menu-navbar" class="d-flex flex-row align-items-center">
             <p class="menu-border">Beranda</p>
             <p class="menu-border">Pelayanan</p>
             <p class="menu-border">Dokter</p>
@@ -94,10 +78,9 @@
         </div>
     </div>
     
-    <!-- slider overlay -->
-    <div class="position-relative" style="z-index: 10;">
-        <div style="min-height: 100vh; width: 100%">
-            <img id="img-slider" src="<?= base_url('asset/image_4.png');?>">
+    <div style="min-height: 100vh;" class="h-100 position-relative" style="z-index: 10;">
+        <div style="min-height: 100vh;">
+            <img id="img-slider" style="min-height: 100vh;" class="w-100" src="<?= base_url('asset/image_4.png');?>">
         </div>
         <div class="slider-overlay h-100 d-flex flex-column align-items-center">
             <div class="d-flex flex-column">
