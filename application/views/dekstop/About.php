@@ -13,7 +13,7 @@
 
         #card-about {
             width: 100%;
-            max-width: 425px;
+            max-width: 1050px;
             /* width: 22rem; */
             border-radius: 10px;
             padding: 5px;
@@ -34,7 +34,7 @@
 
         .btn-location {
             gap: 5px;
-            margin-top: 10px;
+            margin-top: 15px;
             margin-bottom: 5px;
             padding: 10px 15px;
             font-weight: 500;
@@ -53,8 +53,8 @@
 
         .card {
             width: 100%;
-            max-width: 410px;
-            padding: 10px;
+            max-width: 1050px;
+            padding-top: 10px;
             background: #fff;
             border-radius: 10px;
             overflow: hidden;
@@ -69,23 +69,25 @@
         }
 
         .card img {
-            width: 150px; 
-            height: 220px;
+            width: 270px; 
+            height: 400px;
+            margin-left: 40px;
             object-fit: cover;
             border-radius: 10px;
         }
 
         .card-title {
-            font-size: 24px;
+            font-size: 45px;
+            margin-left: 30px;
             font-weight: semibold;
-            margin-bottom: 30px;
         }
 
         .card-text {
-            font-size: 14px;
+            font-size: 28px;
             color: #555;
             display: inline;
-            margin-right: 7px;
+            margin-left: 30px;
+            margin-top: 100px;
         }
 
         .text-body-secondary {
@@ -96,7 +98,8 @@
        
         .btn-jadwal{
             margin-top: 10px;
-            padding: 10px 15px;
+            margin-left: 30px;
+            padding: 15px 15px;
             font-weight: 400;
             color: white;
             background: rgba(0, 170, 181, 1);
@@ -116,9 +119,9 @@
 <body>
 
 <div class="about">
-    <h2 class="fw-semibold fs-1 text-center">Klinik Mata dr. Sjamsu</h2>
+    <h2 class="fw-semibold fs-1 text-center mt-5">Klinik Mata dr. Sjamsu</h2>
 
-    <div id="card-about" class="mt-4 mb-3">
+    <div id="card-about" class="mt-5 mb-5">
         <img src="<?= base_url('asset/images/about.png') ?>" class="card-img-top" alt="Klinik Mata">
         <div class="card-body">
             <button class="btn-location">Our Location <i class="fa-solid fa-arrow-right-long"></i></button>
@@ -129,13 +132,13 @@
 <div class="card d-flex flex-row mb-2 mt-5">
     <img src="<?= base_url('asset/images/doctor.png') ?>" alt="Gambar">
     <div class="card-body">
-        <h1 class="card-title">Jam Operasional</h1>
+        <h1 class="card-title mb-5">Jam Operasional</h1>
         <div class="jadwal">
-        <p class="card-text">Senin - Jumat &nbsp;&nbsp; 09:00 - 12:00</p>
+        <p class="card-text">Senin - Jumat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 12:00</p>
         <br>
-        <p class="card-text">Sabtu  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 12:00</p>
+        <p class="card-text">Sabtu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 12:00</p>
         <br>
-        <p class="card-text">Minggu/Hari Libur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tutup</p>
+        <p class="card-text">Minggu/Hari Libur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tutup</p>
             <button class="btn-jadwal" ><i class="fa-regular fa-calendar"></i> Jadwal</i></button>
         </div>
         
