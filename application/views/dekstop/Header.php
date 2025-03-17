@@ -42,7 +42,7 @@
             font-size: 20px;
             text-align: center;
             margin-top: 15px;
-            padding: 0 20px;
+            padding: 0 200px;
         }
 
         .booking-btn {
