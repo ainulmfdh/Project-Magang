@@ -73,6 +73,7 @@
         .service-title {
             color: #00AAB5;
             font-weight: bold;
+            font-size: 22px;
             margin-top: 30px;
             margin-bottom: 10px;
             height: 60px; /* Tinggi tetap untuk judul */
@@ -84,6 +85,7 @@
         .service-description {
             color: #454545;
             flex-grow: 1; /* Mengisi ruang yang tersisa */
+            font-size: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -105,11 +107,7 @@
                 padding-right: 10px;
             }
             .service-title {
-                font-size: 12px;
                 height: 40px;
-            }
-            .service-description {
-                font-size: 10px;
             }
         }
     </style>
