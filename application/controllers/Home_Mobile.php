@@ -5,7 +5,7 @@ class Home_Mobile extends CI_Controller {
 	public function __construct() {
         parent::__construct();
         if (!detect_device_and_redirect()) {
-			redirect('index.php/homedekstop');
+			redirect('homedekstop');
 		}
     }
 
