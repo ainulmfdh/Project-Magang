@@ -73,14 +73,11 @@
         }
 
         .card img {
-            width: 80px; 
-            height: 140px;
+            width: 110px; 
+            height: 200px;
+            /* margin-left: 10px; */
             object-fit: cover;
             border-radius: 10px;
-        }
-
-        .card-body {
-            /* flex: 1;  */
         }
 
         .card-title {
@@ -135,7 +132,7 @@
     </div>
 </div>
 
-<div class="card d-flex flex-row mb-2">
+<div class="card d-flex flex-row mt-4">
     <img src="<?= base_url('asset/images/doctor.png') ?>" alt="Gambar">
     <div class="card-body">
         <h1 class="card-title">Jam Operasional</h1>
