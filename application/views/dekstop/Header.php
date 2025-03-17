@@ -10,7 +10,7 @@
     <title>Document</title>
     <style>
         #menu-navbar {
-            gap: 20px;
+            gap: 15px;
             justify-content: end;
             width: 100%;
         }
