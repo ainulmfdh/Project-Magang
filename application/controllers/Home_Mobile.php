@@ -11,6 +11,7 @@ class Home_Mobile extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('mobile/popup');
         $this->load->view('mobile/header');
         $this->load->view('mobile/bpjs');
 		$this->load->view('mobile/layanan');

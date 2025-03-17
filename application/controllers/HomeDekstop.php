@@ -11,6 +11,7 @@ class HomeDekstop extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('dekstop/popup');
         $this->load->view('dekstop/header');
         $this->load->view('dekstop/bpjs');
 		$this->load->view('dekstop/layanan');
