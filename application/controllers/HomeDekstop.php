@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class HomeDekstop extends CI_Controller {
 	public function __construct() {
         parent::__construct();
-		// if (detect_device_and_redirect()) {
-		// 	redirect('home_mobile');
-		// }
+		if (detect_device_and_redirect()) {
+			redirect('home_mobile');
+		}
     }
 
 	public function index()

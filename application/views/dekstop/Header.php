@@ -80,7 +80,7 @@
     
     <div style="min-height: 100vh;" class="h-100 position-relative" style="z-index: 10;">
         <div style="min-height: 100vh;">
-            <img id="img-slider" style="min-height: 100vh;" class="w-100" src="<?= base_url('asset/image_4.png');?>">
+            <img id="img-slider" style="min-height: 100vh;" class="w-100" src="<?= base_url('asset/bg-slider.png');?>">
         </div>
         <div class="slider-overlay h-100 d-flex flex-column align-items-center">
             <div class="d-flex flex-column">
