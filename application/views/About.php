@@ -7,16 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .about {
-            padding: 20px;
-        }
-
-        .title{
-            text-align: center;
+            padding: 10px;
+            justify-content: center;
         }
 
         #card-about {
             width: 100%;
-            max-width: 350px;
+            max-width: 425px;
             /* width: 22rem; */
             border-radius: 10px;
             padding: 5px;
@@ -29,11 +26,9 @@
 
         #card-about img {
             width: 100%;
-            /* border-radius: 10px 10px 0 0; */
         }
 
         .card-body {
-            /* padding: 5px; */
             margin-left: 10px;
         }
 
@@ -58,7 +53,8 @@
 
         .card {
             width: 100%;
-            max-width: 350px;
+            max-width: 410px;
+            padding: 10px;
             background: #fff;
             border-radius: 10px;
             overflow: hidden;
@@ -73,25 +69,23 @@
         }
 
         .card img {
-            width: 80px; 
-            height: 140px;
+            width: 150px; 
+            height: 220px;
             object-fit: cover;
             border-radius: 10px;
         }
 
-        .card-body {
-            /* flex: 1;  */
-        }
-
         .card-title {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: semibold;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .card-text {
-            font-size: 13px;
+            font-size: 14px;
             color: #555;
+            display: inline;
+            margin-right: 7px;
         }
 
         .text-body-secondary {
@@ -99,10 +93,7 @@
             color: #888;
         }
 
-        .card-text{
-            display: inline;
-            margin-right: 15px;
-        }
+       
         .btn-jadwal{
             margin-top: 10px;
             padding: 10px 15px;
@@ -125,9 +116,9 @@
 <body>
 
 <div class="about">
-    <h2 class="title">Klinik Mata dr. Sjamsu</h2>
+    <h2 class="fw-semibold fs-1 text-center">Klinik Mata dr. Sjamsu</h2>
 
-    <div id="card-about">
+    <div id="card-about" class="mt-4 mb-3">
         <img src="<?= base_url('asset/images/about.png') ?>" class="card-img-top" alt="Klinik Mata">
         <div class="card-body">
             <button class="btn-location">Our Location <i class="fa-solid fa-arrow-right-long"></i></button>
@@ -135,7 +126,7 @@
     </div>
 </div>
 
-<div class="card d-flex flex-row mb-2">
+<div class="card d-flex flex-row mb-2 mt-5">
     <img src="<?= base_url('asset/images/doctor.png') ?>" alt="Gambar">
     <div class="card-body">
         <h1 class="card-title">Jam Operasional</h1>
