@@ -74,7 +74,8 @@
                 <div class="invalid-feedback">Masukkan Nomor Rujukan yang valid.</div>
             </div>
 
-            <button type="submit" class="btn1 btn-custom w-50 mt-3">Cek</button>
+            <button type="submit" class="btn1 btn-custom w-50 btn-check-responsive mt-3" style="border-radius: 10px !important;">Cek</button>
+
         </form>
 
             <div id="extraForm" class="d-none mt-3">
@@ -97,7 +98,7 @@
             </div>
             <small class="text-white d-block mt-2">*Batas maksimum pemesanan jadwal 3 bulan ke depan</small>
             <small class="text-white d-block">*Pilihan tanggal akan berwarna merah jika kuota penuh</small>
-            <button type="submit" class="btn1 btn-custom w-100 mt-3">Kirim</button>
+            <button type="submit" class="btn1 btn-custom w-100 mt-3" style="border-radius: 10px !important;">Kirim</button>
         </div>            
     </div>
 
@@ -119,7 +120,7 @@
             <div class="invalid-feedback">Masukkan Nomor Rujukan yang valid.</div>
         </div>
 
-        <button type="submit" class="btn1 btn-custom-privat w-50 mt-3">Cek</button>
+        <button type="submit" class="btn1 btn-custom-privat w-50 btn-check-responsive mt-3" style="border-radius: 10px !important;">Cek</button>
     </form>
 
     <div id="extraFormPrivat" class="d-none mt-3">
@@ -142,8 +143,8 @@
         </div>
         <small class="text-white d-block mt-2">*Batas maksimum pemesanan jadwal 3 bulan ke depan</small>
         <small class="text-white d-block">*Pilihan tanggal akan berwarna merah jika kuota penuh</small>
-        <button type="submit" class="btn1 btn-custom-privat w-100 mt-3">Kirim</button>
-    </div>            
+        <button type="submit" class="btn1 btn-custom-privat w-100 mt-3" style="border-radius: 10px !important;">Kirim</button>
+    </div>           
 </div>
 </div>
 
