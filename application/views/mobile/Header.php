@@ -69,7 +69,7 @@
     </style>
 </head>
 <body id="header">
-    <div class="w-100 bg-white position-relative" style="height: 80px; z-index: 30;">
+    <div class="w-100 bg-white position-fixed" style="height: 80px; z-index: 30;">
         <div class="d-flex align-items-center h-100">
             <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('asset/image_2.png');?>">
             <img style="margin-left: 85px;" src="<?= base_url('asset/image_4.png');?>">
@@ -92,8 +92,10 @@
         </div>
     </div>
     
-    <div class="h-100 position-relative" style="z-index: 10;">
-        <img id="img-slider" class="h-100 w-100" src="<?= base_url('asset/image_4.png');?>">
+    <div style="min-height: 100vh;" class="h-100 position-relative" style="z-index: 10;">
+        <div style="min-height: 100vh;">
+            <img id="img-slider" style="min-height: 100vh;" class="w-100" src="<?= base_url('asset/bg-slider.png');?>">
+        </div>
         <div class="slider-overlay h-100 d-flex flex-column align-items-center">
             <div class="d-flex flex-column">
                 <h1 class="slider-heading">FOKUS UTAMA UNTUK KESEHATAN MATA ANDA</h1>
