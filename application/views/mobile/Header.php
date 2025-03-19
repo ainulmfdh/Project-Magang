@@ -109,6 +109,8 @@
     </div>
     
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -121,9 +123,7 @@
             event.preventDefault(); // Mencegah perilaku default (jika tombol dalam form)
             document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
         });
-    </script>
 
-    <script>
         const hamburgerMenuToggle = document.getElementById('hamburger-menu-toggle');
         const hamburgerMenu = document.getElementById('hamburger-menu');
         const closeHamburgerMenu = document.getElementById('close-hamburger-menu');
@@ -161,6 +161,20 @@
             }
             imageSlider.setAttribute('src', `${sliderImages[imageSliderActive]}`);
         }, 2000);
+
+        $(document).ready(() => {
+            detectScreen();
+            $(window).on('resize', detectScreen);
+        })
+
+        function detectScreen() {
+            var width = $(window).width();
+            
+            if (width >= 768) {
+                window.location.href = '<?= base_url('homedekstop') ?>';
+                console.log('mobile');
+            } 
+        }
     </script>
 </body>
 </html>
