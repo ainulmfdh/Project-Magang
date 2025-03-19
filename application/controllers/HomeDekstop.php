@@ -17,10 +17,15 @@ class HomeDekstop extends CI_Controller {
 		$this->load->view('dekstop/layanan');
 		$this->load->view('dekstop/about');
 		$this->load->view('dekstop/background');
+		$this->load->view('dekstop/dokter_berita');
         $this->load->view('dekstop/footer');
 	}
+<<<<<<< HEAD
+}
+=======
   
   public function test() {
 		$this->load->view('dekstop/test');
 	}
 }
+>>>>>>> 32f5c6742288c3a3d4c885b51f87713a421af6e0
