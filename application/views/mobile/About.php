@@ -133,7 +133,7 @@
 </div>
 
 <div class="card d-flex flex-row mt-4">
-    <img src="<?= base_url('asset/images/doctor.png') ?>" alt="Gambar">
+    <img src="<?= base_url('asset/images/dr_valeri.png') ?>" alt="Gambar">
     <div class="card-body">
         <h1 class="card-title">Jam Operasional</h1>
         <div class="jadwal">
