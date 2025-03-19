@@ -17,6 +17,7 @@ class HomeDekstop extends CI_Controller {
 		$this->load->view('dekstop/layanan');
 		$this->load->view('dekstop/about');
 		$this->load->view('dekstop/background');
+		$this->load->view('dekstop/dokter_berita');
         $this->load->view('dekstop/footer');
 	}
 }
