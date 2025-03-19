@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home_Mobile extends CI_Controller {
 	public function __construct() {
         parent::__construct();
-        if (!detect_device_and_redirect()) {
-			redirect('homedekstop');
-		}
+        // if (!detect_device_and_redirect()) {
+		// 	redirect('homedekstop');
+		// }
     }
 
 	public function index()
