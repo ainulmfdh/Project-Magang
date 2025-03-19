@@ -26,42 +26,6 @@
             z-index: 40;
             transition: all 0.3s linear;
         }
-
-        .slider-overlay {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 0 30px;
-        }
-
-        .slider-heading {
-            color: #CEFAFF;
-            font-size: 32px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 150px;
-        }
-
-        .slider-text {
-            color: white;
-            font-weight: 600;
-            font-size: 20px;
-            text-align: center;
-            margin-top: 15px;
-            padding: 0 20px;
-        }
-
-        .booking-btn {
-            width: 275px;
-            height: 57px;
-            border-radius: 10px;
-            background-color: white;
-            color: #00AAB5;
-            font-weight: bold;
-            margin-top: 100px;
-            border: none;
-        }
-
         .menu-border {
             border-bottom: 1px solid white;
             padding-bottom: 20px;
@@ -91,23 +55,6 @@
             <p class="menu-border">Berita Terbaru</p>
         </div>
     </div>
-    
-    <div style="min-height: 100vh;" class="h-100 position-relative" style="z-index: 10;">
-        <div style="min-height: 100vh;">
-            <img id="img-slider" style="min-height: 100vh;" class="w-100" src="<?= base_url('asset/bg-slider.png');?>">
-        </div>
-        <div class="slider-overlay h-100 d-flex flex-column align-items-center">
-            <div class="d-flex flex-column">
-                <h1 class="slider-heading">FOKUS UTAMA UNTUK KESEHATAN MATA ANDA</h1>
-                <p class="slider-text">Jadwalkan waktu anda untuk periksa maupun konsultasi pada klinik kami, dengan klik booking dibawah ini</p>
-            </div>
-            <button id="btnBooking" class="booking-btn">
-                <i class="fa-regular fa-calendar me-1"></i>
-                Booking
-            </button>
-        </div>
-    </div>
-    
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -115,10 +62,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        document.getElementById('btnBooking').addEventListener('click', function (event) {
-            event.preventDefault(); // Mencegah perilaku default (jika tombol dalam form)
-            document.getElementById('bpjs').scrollIntoView({ behavior: 'smooth' });
-        });
         document.getElementById('logomata').addEventListener('click', function (event) {
             event.preventDefault(); // Mencegah perilaku default (jika tombol dalam form)
             document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
@@ -128,9 +71,6 @@
         const hamburgerMenu = document.getElementById('hamburger-menu');
         const closeHamburgerMenu = document.getElementById('close-hamburger-menu');
         let hamburgerMenuIsOpen = false;
-        const sliderImages = ["<?= base_url('asset/bg-slider.png');?>", "<?= base_url('asset/bg2.png');?>"];
-        const imageSlider = document.getElementById("img-slider");
-        let imageSliderActive = 0;
 
         hamburgerMenuToggle.addEventListener('click', () => {
             hamburgerMenuIsOpen = !hamburgerMenuIsOpen;
@@ -152,15 +92,6 @@
                 hamburgerMenu.style.right = '-1000px';
             }
         });
-
-        setInterval(() => {
-            if (imageSliderActive === sliderImages.length - 1) {
-                imageSliderActive = 0;
-            } else {
-                imageSliderActive++;
-            }
-            imageSlider.setAttribute('src', `${sliderImages[imageSliderActive]}`);
-        }, 2000);
 
         $(document).ready(() => {
             detectScreen();

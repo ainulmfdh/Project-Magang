@@ -19,48 +19,6 @@
             margin: 0;
             font-weight: 500;
         }
-
-        .slider-overlay {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 0 30px;
-            min-height: 100vh; 
-        }
-
-        .slider-heading {
-            color: #CEFAFF;
-            font-size: 32px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 150px;
-        }
-
-        .slider-text {
-            color: white;
-            font-weight: 600;
-            font-size: 20px;
-            text-align: center;
-            margin-top: 15px;
-            padding: 0 200px;
-        }
-
-        .booking-btn {
-            width: 275px;
-            height: 57px;
-            border-radius: 10px;
-            background-color: white;
-            color: #00AAB5;
-            font-weight: bold;
-            margin-top: 100px;
-            border: none;
-        }
-
-        #img-slider {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover; 
-        }
     </style>
 </head>
 <body id="header">
@@ -77,24 +35,7 @@
             <p class="menu-border">Berita Terbaru</p>
         </div>
     </div>
-    
-    <!-- slider overlay -->
-    <div class="position-relative" style="z-index: 10;">
-        <div style="min-height: 100vh; width: 100%">
-            <img id="img-slider" style="min-height: 100vh;" class="w-100" src="<?= base_url('asset/bg-slider.png');?>">
-        </div>
-        <div class="slider-overlay h-100 d-flex flex-column align-items-center">
-            <div class="d-flex flex-column">
-                <h1 class="slider-heading">FOKUS UTAMA UNTUK KESEHATAN MATA ANDA</h1>
-                <p class="slider-text">Jadwalkan waktu anda untuk periksa maupun konsultasi pada klinik kami, dengan klik booking dibawah ini</p>
-            </div>
-            <button id="btnBooking" class="booking-btn">
-                <i class="fa-regular fa-calendar me-1"></i>
-                Booking
-            </button>
-        </div>
-    </div>
-    
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -102,27 +43,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        document.getElementById('btnBooking').addEventListener('click', function (event) {
-            event.preventDefault(); // Mencegah perilaku default (jika tombol dalam form)
-            document.getElementById('bpjs').scrollIntoView({ behavior: 'smooth' });
-        });
         document.getElementById('logomata').addEventListener('click', function (event) {
             event.preventDefault(); // Mencegah perilaku default (jika tombol dalam form)
             document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
         });
-
-        const sliderImages = ["<?= base_url('asset/bg-slider.png');?>", "<?= base_url('asset/bg2.png');?>"];
-        const imageSlider = document.getElementById("img-slider");
-        let imageSliderActive = 0;
-
-        setInterval(() => {
-            if (imageSliderActive === sliderImages.length - 1) {
-                imageSliderActive = 0;
-            } else {
-                imageSliderActive++;
-            }
-            imageSlider.setAttribute('src', `${sliderImages[imageSliderActive]}`);
-        }, 2000);
 
         $(document).ready(() => {
             detectScreen();
