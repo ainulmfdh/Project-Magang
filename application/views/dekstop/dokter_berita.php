@@ -468,157 +468,154 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    // Single document ready function for all carousel functionality
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize both carousels with Bootstrap's carousel functionality
-        var doctorCarousel = new bootstrap.Carousel(document.getElementById('doctorCarousel'), {
-            interval: 5000,
-            wrap: true
-        });
-        
-        var beritaCarousel = new bootstrap.Carousel(document.getElementById('beritaCarousel'), {
-            interval: 4000,
-            wrap: true
-        });
-
-        // For owl carousel scroll functionality
+        // Doctor carousel functionality
         const owlContainer = document.getElementById('owl-demo');
-        const prevButton = document.getElementById('prevDoctor');
-        const nextButton = document.getElementById('nextDoctor');
-        const cardWidth = document.querySelector('.card-dokter').offsetWidth + 20; // width + margin
-        const indicators = document.querySelectorAll('.owl-indicators li');
-        const visibleCards = Math.floor(owlContainer.offsetWidth / cardWidth);
-        const totalCards = document.querySelectorAll('#owl-demo .item').length;
-        const maxScrollGroups = Math.ceil(totalCards / visibleCards);
+        const prevDoctorButton = document.getElementById('prevDoctor');
+        const nextDoctorButton = document.getElementById('nextDoctor');
+        const doctorIndicators = document.querySelectorAll('.owl-indicators li');
         
-        let currentGroup = 0;
-        
-        // Update indicators when scrolling
-        function updateIndicators(groupIndex) {
-            indicators.forEach((indicator, index) => {
-                if(index === groupIndex) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
+        if (owlContainer && prevDoctorButton && nextDoctorButton) {
+            const doctorCardWith = document.querySelector('.card-dokter').offsetWidth + 20; // width + margin
+            const visibleDoctorCards = Math.floor(owlContainer.offsetWidth / doctorCardWith);
+            const totalDoctorCards = document.querySelectorAll('#owl-demo .item').length;
+            const maxDoctorScrollGroups = Math.ceil(totalDoctorCards / visibleDoctorCards);
+            
+            let currentDoctorGroup = 0;
+            
+            // Update doctor indicators
+            function updateDoctorIndicators(groupIndex) {
+                doctorIndicators.forEach((indicator, index) => {
+                    if(index === groupIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Scroll when doctor indicators are clicked
+            doctorIndicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    const scrollTo = index * visibleDoctorCards * doctorCardWith;
+                    owlContainer.scrollTo({
+                        left: scrollTo,
+                        behavior: 'smooth'
+                    });
+                    currentDoctorGroup = index;
+                    updateDoctorIndicators(currentDoctorGroup);
+                });
+            });
+            
+            // Previous button for doctor carousel
+            prevDoctorButton.addEventListener('click', function() {
+                if(currentDoctorGroup > 0) {
+                    currentDoctorGroup--;
+                    owlContainer.scrollTo({
+                        left: currentDoctorGroup * visibleDoctorCards * doctorCardWith,
+                        behavior: 'smooth'
+                    });
+                    updateDoctorIndicators(currentDoctorGroup);
+                }
+            });
+            
+            // Next button for doctor carousel
+            nextDoctorButton.addEventListener('click', function() {
+                if(currentDoctorGroup < maxDoctorScrollGroups - 1) {
+                    currentDoctorGroup++;
+                    owlContainer.scrollTo({
+                        left: currentDoctorGroup * visibleDoctorCards * doctorCardWith,
+                        behavior: 'smooth'
+                    });
+                    updateDoctorIndicators(currentDoctorGroup);
+                }
+            });
+            
+            // Monitor scroll position for doctor carousel
+            owlContainer.addEventListener('scroll', function() {
+                const scrollPosition = owlContainer.scrollLeft;
+                const groupIndex = Math.round(scrollPosition / (visibleDoctorCards * doctorCardWith));
+                if(groupIndex !== currentDoctorGroup) {
+                    currentDoctorGroup = groupIndex;
+                    updateDoctorIndicators(currentDoctorGroup);
                 }
             });
         }
         
-        // Scroll to specific position based on indicator
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', function() {
-                const scrollTo = index * visibleCards * cardWidth;
-                owlContainer.scrollTo({
-                    left: scrollTo,
-                    behavior: 'smooth'
-                });
-                currentGroup = index;
-                updateIndicators(currentGroup);
-            });
-        });
-        
-        // Scroll functions for owl carousel
-        prevButton.addEventListener('click', function() {
-            if(currentGroup > 0) {
-                currentGroup--;
-                owlContainer.scrollTo({
-                    left: currentGroup * visibleCards * cardWidth,
-                    behavior: 'smooth'
-                });
-                updateIndicators(currentGroup);
-            }
-        });
-        
-        nextButton.addEventListener('click', function() {
-            if(currentGroup < maxScrollGroups - 1) {
-                currentGroup++;
-                owlContainer.scrollTo({
-                    left: currentGroup * visibleCards * cardWidth,
-                    behavior: 'smooth'
-                });
-                updateIndicators(currentGroup);
-            }
-        });
-        
-        // Monitor scroll position to update indicators
-        owlContainer.addEventListener('scroll', function() {
-            const scrollPosition = owlContainer.scrollLeft;
-            const groupIndex = Math.round(scrollPosition / (visibleCards * cardWidth));
-            if(groupIndex !== currentGroup) {
-                currentGroup = groupIndex;
-                updateIndicators(currentGroup);
-            }
-        });
-    });
-	document.addEventListener('DOMContentLoaded', function() {
-        // Initialize the functionality for news carousel
+        // News carousel functionality
         const newsContainer = document.getElementById('news-owl-demo');
         const prevNewsButton = document.getElementById('prevNews');
         const nextNewsButton = document.getElementById('nextNews');
-        const newsCard = document.querySelector('#news-owl-demo .card-berita');
-        const cardWidth = newsCard ? newsCard.offsetWidth + 40 : 400; // width + margins
         const newsIndicators = document.querySelectorAll('.news-indicators li');
-        const visibleCards = Math.floor(newsContainer.offsetWidth / cardWidth);
-        const totalCards = document.querySelectorAll('#news-owl-demo .item').length;
-        const maxScrollGroups = Math.ceil(totalCards / visibleCards);
         
-        let currentNewsGroup = 0;
-        
-        // Update indicators when scrolling
-        function updateNewsIndicators(groupIndex) {
+        if (newsContainer && prevNewsButton && nextNewsButton) {
+            const newsCard = document.querySelector('#news-owl-demo .card-berita');
+            const cardWidth = newsCard ? newsCard.offsetWidth + 40 : 400; // width + margins
+            const visibleCards = Math.floor(newsContainer.offsetWidth / cardWidth);
+            const totalCards = document.querySelectorAll('#news-owl-demo .item').length;
+            const maxScrollGroups = Math.ceil(totalCards / visibleCards);
+            
+            let currentNewsGroup = 0;
+            
+            // Update news indicators
+            function updateNewsIndicators(groupIndex) {
+                newsIndicators.forEach((indicator, index) => {
+                    if(index === groupIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Scroll when news indicators are clicked
             newsIndicators.forEach((indicator, index) => {
-                if(index === groupIndex) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
+                indicator.addEventListener('click', function() {
+                    const scrollTo = index * visibleCards * cardWidth;
+                    newsContainer.scrollTo({
+                        left: scrollTo,
+                        behavior: 'smooth'
+                    });
+                    currentNewsGroup = index;
+                    updateNewsIndicators(currentNewsGroup);
+                });
+            });
+            
+            // Previous button for news carousel
+            prevNewsButton.addEventListener('click', function() {
+                if(currentNewsGroup > 0) {
+                    currentNewsGroup--;
+                    newsContainer.scrollTo({
+                        left: currentNewsGroup * visibleCards * cardWidth,
+                        behavior: 'smooth'
+                    });
+                    updateNewsIndicators(currentNewsGroup);
+                }
+            });
+            
+            // Next button for news carousel
+            nextNewsButton.addEventListener('click', function() {
+                if(currentNewsGroup < maxScrollGroups - 1) {
+                    currentNewsGroup++;
+                    newsContainer.scrollTo({
+                        left: currentNewsGroup * visibleCards * cardWidth,
+                        behavior: 'smooth'
+                    });
+                    updateNewsIndicators(currentNewsGroup);
+                }
+            });
+            
+            // Monitor scroll position for news carousel
+            newsContainer.addEventListener('scroll', function() {
+                const scrollPosition = newsContainer.scrollLeft;
+                const groupIndex = Math.round(scrollPosition / (visibleCards * cardWidth));
+                if(groupIndex !== currentNewsGroup) {
+                    currentNewsGroup = groupIndex;
+                    updateNewsIndicators(currentNewsGroup);
                 }
             });
         }
-        
-        // Scroll to specific position based on indicator
-        newsIndicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', function() {
-                const scrollTo = index * visibleCards * cardWidth;
-                newsContainer.scrollTo({
-                    left: scrollTo,
-                    behavior: 'smooth'
-                });
-                currentNewsGroup = index;
-                updateNewsIndicators(currentNewsGroup);
-            });
-        });
-        
-        // Scroll functions for news owl carousel
-        prevNewsButton.addEventListener('click', function() {
-            if(currentNewsGroup > 0) {
-                currentNewsGroup--;
-                newsContainer.scrollTo({
-                    left: currentNewsGroup * visibleCards * cardWidth,
-                    behavior: 'smooth'
-                });
-                updateNewsIndicators(currentNewsGroup);
-            }
-        });
-        
-        nextNewsButton.addEventListener('click', function() {
-            if(currentNewsGroup < maxScrollGroups - 1) {
-                currentNewsGroup++;
-                newsContainer.scrollTo({
-                    left: currentNewsGroup * visibleCards * cardWidth,
-                    behavior: 'smooth'
-                });
-                updateNewsIndicators(currentNewsGroup);
-            }
-        });
-        
-        // Monitor scroll position to update indicators
-        newsContainer.addEventListener('scroll', function() {
-            const scrollPosition = newsContainer.scrollLeft;
-            const groupIndex = Math.round(scrollPosition / (visibleCards * cardWidth));
-            if(groupIndex !== currentNewsGroup) {
-                currentNewsGroup = groupIndex;
-                updateNewsIndicators(currentNewsGroup);
-            }
-        });
     });
 </script>
 </body>
