@@ -78,8 +78,9 @@
         </div>
     </div>
     
-    <div style="min-height: 100vh;" class="h-100 position-relative" style="z-index: 10;">
-        <div style="min-height: 100vh;">
+    <!-- slider overlay -->
+    <div class="position-relative" style="z-index: 10;">
+        <div style="min-height: 100vh; width: 100%">
             <img id="img-slider" style="min-height: 100vh;" class="w-100" src="<?= base_url('asset/bg-slider.png');?>">
         </div>
         <div class="slider-overlay h-100 d-flex flex-column align-items-center">
@@ -110,34 +111,9 @@
     </script>
 
     <script>
-        const hamburgerMenuToggle = document.getElementById('hamburger-menu-toggle');
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        const closeHamburgerMenu = document.getElementById('close-hamburger-menu');
-        let hamburgerMenuIsOpen = false;
         const sliderImages = ["<?= base_url('asset/bg-slider.png');?>", "<?= base_url('asset/bg2.png');?>"];
         const imageSlider = document.getElementById("img-slider");
         let imageSliderActive = 0;
-
-        hamburgerMenuToggle.addEventListener('click', () => {
-            hamburgerMenuIsOpen = !hamburgerMenuIsOpen;
-            if (hamburgerMenuIsOpen) {
-                hamburgerMenu.style.right = '0';
-            } else {
-                hamburgerMenu.style.right = '-1000px';
-            }
-        });
-
-        closeHamburgerMenu.addEventListener('click', () => {
-            hamburgerMenuIsOpen = false;
-            hamburgerMenu.style.right = '-1000px';
-        });
-
-        document.addEventListener('click', (event) => {
-            if (hamburgerMenuIsOpen && !hamburgerMenu.contains(event.target) && !hamburgerMenuToggle.contains(event.target)) {
-                hamburgerMenuIsOpen = false;
-                hamburgerMenu.style.right = '-1000px';
-            }
-        });
 
         setInterval(() => {
             if (imageSliderActive === sliderImages.length - 1) {

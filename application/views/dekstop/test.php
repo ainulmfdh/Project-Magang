@@ -21,19 +21,15 @@
         /* Style untuk pop-up */
         .popup-container {
             position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            max-width: 200%;
-            max-height: 200%;
+            max-width: 90%;
+            max-height: 90%;
         }
 
         /* Style untuk gambar pop-up */
         .popup-image {
-            width: 110%;
-            max-width: 500px;
-            height: auto;
+            width: 100%;
+            max-width: 800px;
+            height: 350px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
@@ -42,9 +38,9 @@
         .close-button {
             position: absolute;
             top: -15px;
-            right: -30px;
-            width: 60px;
-            height: 60px;
+            right: -15px;
+            width: 50px;
+            height: 50px;
             background-color: white;
             border-radius: 50%;
             display: flex;
@@ -77,38 +73,28 @@
 <body>
     <!-- Struktur Pop-up -->
     <div id="popupOverlay" class="popup-overlay">
-        <div class="popup-container popup-animation">
-            <img src="asset/popup.png" alt="Pengumuman BPJS" class="popup-image">
-            <button id="closeButton" class="close-button">✕</button>
-        </div>
+        <p>sdfdsfsd</p>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            //pop-up saat halaman dimuat
-            document.getElementById('popupOverlay').style.display = 'flex';
-            
-            document.getElementById('closeButton').addEventListener('click', function() {
-                document.getElementById('popupOverlay').style.display = 'none';
-            });
-            
-            // Tambahan: Tutup pop-up saat overlay diklik (opsional)
-            document.getElementById('popupOverlay').addEventListener('click', function(event) {
-                if (event.target === this) {
-                    document.getElementById('popupOverlay').style.display = 'none';
-                }
-            });
-            
-            // const popupShown = sessionStorage.getItem('popupShown');
-            
-            // if (!popupShown) {
-            //     document.getElementById('popupOverlay').style.display = 'flex';
-            //     sessionStorage.setItem('popupShown', 'true');
-            // } else {
-            //     document.getElementById('popupOverlay').style.display = 'none';
-            // }
-            
+        $(function () {
+            window.addEventListener('resize', detectScreen);
         });
+
+
+        function detectScreen() {
+            var width = $(window).width();
+            // console.log(width);
+            if (width < 768) {
+                href = '<?= base_url('homemobile') ?>';
+                console.log('mobile', href);
+            } else {
+                href = '<?= base_url('homedekstop') ?>';
+                console.log('dekstop', href);
+                
+            }    
+        }
+        // });
     </script>
 </body>
 </html>
