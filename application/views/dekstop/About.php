@@ -122,7 +122,7 @@
     <div class="col">
         <div class="about">
         <div id="card-about" class="">
-            <img src="<?= base_url('asset/images/about.png') ?>" class="card-img-top" alt="Klinik Mata">
+            <img src="asset/images/about.png" class="card-img-top" alt="Klinik Mata">
             <div class="card-body">
                 <button class="btn-location d-flex justify-content-start">Our Location <i class="fa-solid fa-arrow-right-long"></i></button>
             </div>
@@ -131,7 +131,7 @@
     </div>
     <div class="col">
     <div class="card d-flex flex-row mt-2">
-    <img src="<?= base_url('asset/images/dr_valeri.png') ?>" alt="Gambar">
+    <img src="asset/images/dr_valeri.png" alt="Gambar">
     <div class="card-body">
         <h1 class="card-title mb-5">Jam Operasional</h1>
         <div class="jadwal">
@@ -149,32 +149,6 @@
   </div>
 </div>
 
-<!-- <div class="about">
-    <h2 class="fw-semibold fs-1 text-center mt-5">Klinik Mata dr. Sjamsu</h2>
-
-    <div id="card-about" class="mt-5 mb-5">
-        <img src="<?= base_url('asset/images/about.png') ?>" class="card-img-top" alt="Klinik Mata">
-        <div class="card-body">
-            <button class="btn-location">Our Location <i class="fa-solid fa-arrow-right-long"></i></button>
-        </div>
-    </div>
-</div>
-
-<div class="card d-flex flex-row mb-2 mt-5">
-    <img src="<?= base_url('asset/images/dr_valeri.png') ?>" alt="Gambar">
-    <div class="card-body">
-        <h1 class="card-title mb-5">Jam Operasional</h1>
-        <div class="jadwal">
-        <p class="card-text">Senin - Jumat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 12:00</p>
-        <br>
-        <p class="card-text">Sabtu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 12:00</p>
-        <br>
-        <p class="card-text">Minggu/Hari Libur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tutup</p>
-            <button class="btn-jadwal" ><i class="fa-regular fa-calendar"></i> Jadwal</i></button>
-        </div>
-        
-    </div>
-</div> -->
 
 </body>
 </html>

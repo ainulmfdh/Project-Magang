@@ -125,7 +125,7 @@
     <h2 class="title">Klinik Mata dr. Sjamsu</h2>
 
     <div id="card-about">
-        <img src="<?= base_url('asset/images/about.png') ?>" class="card-img-top" alt="Klinik Mata">
+        <img src="asset/images/about.png" class="card-img-top" alt="Klinik Mata">
         <div class="card-body">
             <button class="btn-location">Our Location <i class="fa-solid fa-arrow-right-long"></i></button>
         </div>
@@ -133,7 +133,7 @@
 </div>
 
 <div class="card d-flex flex-row mt-4">
-    <img src="<?= base_url('asset/images/dr_valeri.png') ?>" alt="Gambar">
+    <img src="asset/images/dr_valeri.png" alt="Gambar">
     <div class="card-body">
         <h1 class="card-title">Jam Operasional</h1>
         <div class="jadwal">
