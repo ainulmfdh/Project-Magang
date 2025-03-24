@@ -51,7 +51,7 @@
 <body>
     <div class="position-relative" style="z-index: 10;">
         <div style="min-height: 100vh; width: 100%">
-            <img id="img-slider" style="min-height: 100vh;" class="w-100" src="<?= base_url('asset/bg-slider.png');?>">
+            <img id="img-slider" style="min-height: 100vh;" class="w-100" src="asset/bg-slider.png">
         </div>
         <div class="slider-overlay h-100 d-flex flex-column align-items-center">
             <div class="d-flex flex-column">
