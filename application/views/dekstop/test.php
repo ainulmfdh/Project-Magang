@@ -84,17 +84,12 @@
 
         function detectScreen() {
             var width = $(window).width();
-            // console.log(width);
+            
             if (width < 768) {
-                href = '<?= base_url('homemobile') ?>';
-                console.log('mobile', href);
-            } else {
-                href = '<?= base_url('homedekstop') ?>';
-                console.log('dekstop', href);
-                
-            }    
+                window.location.href = '<?= base_url('home_mobile') ?>';
+                console.log('mobile');
+            } 
         }
-        // });
     </script>
 </body>
 </html>

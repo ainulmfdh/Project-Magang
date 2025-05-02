@@ -21,6 +21,10 @@
         /* Style untuk pop-up */
         .popup-container {
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
             max-width: 200%;
             max-height: 200%;
         }
@@ -38,9 +42,9 @@
         .close-button {
             position: absolute;
             top: -15px;
-            right: -40px;
-            width: 50px;
-            height: 50px;
+            right: -30px;
+            width: 60px;
+            height: 60px;
             background-color: white;
             border-radius: 50%;
             display: flex;

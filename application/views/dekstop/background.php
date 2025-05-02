@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            background-image: url('asset/PORTOFOLIO.png');
+            background-image: url('<?= base_url ('asset/PORTOFOLIO.png');?>');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
